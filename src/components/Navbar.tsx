@@ -15,14 +15,24 @@ import Link from "../Link";
 
 const drawerWidth = 260;
 
-interface MenuItem {
+type MenuItem = {
   name: string;
   url: string;
   icon: JSX.Element;
-}
+};
 
 export default function Navbar() {
   const menuItems: MenuItem[] = [
+    {
+      name: "test",
+      url: "/about",
+      icon: <InboxIcon />,
+    },
+    {
+      name: "test",
+      url: "/about",
+      icon: <InboxIcon />,
+    },
     {
       name: "test",
       url: "/about",
@@ -54,8 +64,8 @@ export default function Navbar() {
         <Toolbar />
         <Divider />
         <List>
-          {menuItems.map((item, index) => (
-            <ListItem key={index} disablePadding>
+          {menuItems.map((item) => (
+            <ListItem key={item.name} disablePadding>
               <ListItemButton LinkComponent={Link} href={item.url}>
                 <ListItemIcon>{item.icon}</ListItemIcon>
                 <ListItemText primary={item.name} />
