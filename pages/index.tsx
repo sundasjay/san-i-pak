@@ -1,3 +1,3 @@
-export default function Home() {
-  return <></>;
+export default function Dashboard() {
+  return <>Chak de phattay</>;
 }

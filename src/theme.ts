@@ -1,8 +1,7 @@
-import { Roboto } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { createTheme } from "@mui/material/styles";
-import { red } from "@mui/material/colors";
 
-export const roboto = Roboto({
+export const poppins = Poppins({
   weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
   display: "swap",
@@ -12,17 +11,48 @@ export const roboto = Roboto({
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#556cd6",
+      main: "#4d72d0",
     },
     secondary: {
-      main: "#19857b",
+      main: "#2a3042",
     },
     error: {
-      main: red.A400,
+      main: "#d02942",
+    },
+    success: {
+      main: "#4aa983",
     },
   },
   typography: {
-    fontFamily: roboto.style.fontFamily,
+    fontFamily: poppins.style.fontFamily,
+    fontSize: 13.5,
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          fontSize: "14.5px",
+          padding: "8px 16px",
+          borderRadius: "5px",
+          textTransform: "capitalize",
+        },
+      },
+    },
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#fff", // Change this to your desired background color
+        },
+      },
+    },
+    MuiDrawer: {
+      styleOverrides: {
+        paper: {
+          backgroundColor: "#2a3042", // Change this to your desired background color
+          color: "#fff",
+        },
+      },
+    },
   },
 });
 
